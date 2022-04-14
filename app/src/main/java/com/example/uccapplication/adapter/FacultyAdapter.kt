@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uccapplication.R
@@ -19,13 +20,12 @@ class FacultyAdapter() : RecyclerView.Adapter<ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view =
+        return ViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.item_faculty_info, parent, false)
-        return ViewHolder(view)
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
 
        val facultyModel:FacultyModel = facultyModelArrayList?.get(position)!!
         holder.name?.setText(facultyModelArrayList?.get(position).toString())
@@ -35,22 +35,20 @@ class FacultyAdapter() : RecyclerView.Adapter<ViewHolder>() {
 
 
     }
-
     override fun getItemCount(): Int {
         return facultyModelArrayList?.size!!
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var name: TextView? = null
-        var phone: TextView? = null
-        var email: TextView? = null
 
 
-        init {
-            this.name = itemView.findViewById(R.id.tv_faculty_name)
-            phone = itemView.findViewById(R.id.iv_faculty_photo)
-            email = itemView.findViewById(R.id.iv_faculty_email)
-        }
+       // var photo: ImageView? =itemView.findViewById(R.id.iv_faculty_photo)
+
+        var name: TextView? = itemView.findViewById(R.id.tv_faculty_name)
+        var phone: TextView? = itemView.findViewById(R.id.iv_faculty_photo)
+        var email: TextView? = itemView.findViewById(R.id.iv_faculty_email)
+
+
     }
 
 

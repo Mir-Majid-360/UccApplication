@@ -4,9 +4,16 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.Switch
+import android.widget.Toast
+import androidx.core.view.GravityCompat
 import com.example.uccapplication.databinding.ActivityMainBinding
+import com.google.android.material.navigation.NavigationView
+import java.util.*
+import kotlin.concurrent.timerTask
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -56,11 +63,60 @@ class MainActivity : AppCompatActivity() {
            startActivity(intent)
        }
 
+        binding.ivToolbarMenu.setOnClickListener{
+            openDrawer()
+        }
+
       // bind fab email here...
 
 
 
 
+    }
+
+    public fun openDrawer()
+    {
+       binding.myDrawerLayout.openDrawer(GravityCompat.START)
+    }
+
+    public  fun  closeDrawer()
+    {
+      binding.myDrawerLayout.closeDrawer(GravityCompat.START)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+
+
+
+        if(id==R.id.home)
+            closeDrawer()
+
+
+        if(id==R.id.courses){
+            val intent = Intent(this, TimeTable::class.java)
+            startActivity(intent)
+            return true
+        }
+
+        if(id==R.id.time_table){
+            val intent = Intent(this, TimeTable::class.java)
+            startActivity(intent)
+            return true
+        }
+        if(id==R.id.admissions){
+            val intent = Intent(this, Admissions::class.java)
+            startActivity(intent)
+            return true
+        }
+        if(id==R.id.faculty_directory){
+            val intent = Intent(this, FacultyDirectory::class.java)
+            startActivity(intent)
+            return true
+        }
+
+
+       return true
     }
 
 }

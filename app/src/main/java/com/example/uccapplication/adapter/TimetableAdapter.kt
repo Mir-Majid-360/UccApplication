@@ -5,20 +5,26 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
 import com.example.uccapplication.R
+import com.example.uccapplication.adapter.TimetableAdapter.ViewHolder
 
-class TimetableAdapter : RecyclerView.Adapter<TimetableAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        // item courses not created yet..
-        // replace timetable item by course item...
-        val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_timetable, parent, false)
-        return ViewHolder(view)
+class TimetableAdapter : RecyclerView.Adapter<ViewHolder>() {
+
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+            // item courses not created yet..
+            // replace timetable item by course item...
+            val view =
+                LayoutInflater.from(parent.context).inflate(R.layout.item_timetable, parent, false)
+            return ViewHolder(view)
+        }
+
+        inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        TODO("Not yet implemented")
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {}
     override fun getItemCount(): Int {
-        return 0
+        TODO("Not yet implemented")
     }
-
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }
