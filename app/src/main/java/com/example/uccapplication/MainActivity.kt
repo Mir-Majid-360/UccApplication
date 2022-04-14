@@ -1,11 +1,9 @@
 package com.example.uccapplication
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 import com.example.uccapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -37,6 +35,33 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+
+
+
+
+
+       binding.ivFacebook.setOnClickListener {
+           val intent =
+               Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/uccjamaica/"))
+           startActivity(intent)
+       }
+        binding.ivTwitter.setOnClickListener {
+           val intent =
+               Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/uccjamaica/"))
+           startActivity(intent)
+       }
+        binding.ivInstagram.setOnClickListener {
+           val intent =
+               Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/accounts/login/?next=/uccjamaica/"))
+           startActivity(intent)
+       }
+
+      // bind fab email here...
+
+
+
+
     }
 
 }
+
