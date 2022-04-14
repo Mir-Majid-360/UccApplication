@@ -10,25 +10,33 @@ import com.example.uccapplication.models.FacultyModel
 
 
 class FacultyDirectory : AppCompatActivity() {
+
+
     private lateinit var binding: ActivityFacultyDirectoryBinding
 
-    private val facultyRV: RecyclerView? = null
-    private val facultyModelArrayList: ArrayList<FacultyModel>? = null
+
+    private  var facultyModelArrayList: ArrayList<FacultyModel> = ArrayList()
     private var facultyAdapter: FacultyAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_faculty_directory)
 
-        getFaculty()
+        binding = ActivityFacultyDirectoryBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        binding.idRvFaculties
-        facultyRV!!.layoutManager = LinearLayoutManager(this)
-        facultyRV.adapter = facultyAdapter
+        facultyAdapter = FacultyAdapter(facultyModelArrayList,this)
+
+
+
+       binding.idRvFaculties
+           .layoutManager = LinearLayoutManager(this)
+        binding.idRvFaculties .adapter = facultyAdapter
+
+        setFaculty()
     }
 
 
-    private fun getFaculty() {
+    private fun setFaculty() {
 
         facultyModelArrayList?.add(FacultyModel("name", "+919149636663", "mirmajid727@gmail.com"))
         facultyModelArrayList?.add(FacultyModel("majid", "+919149636663", "mirmajid360@gmail.com"))

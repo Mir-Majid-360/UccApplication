@@ -1,29 +1,25 @@
 package com.example.uccapplication.models
 
 class CourseModel {
-    var code: String? = null
-    var name: String? = null
-    var credits: String? = null
-    var pre_requisites: String? = null
-    var description: String? = null
+   private var code: String? = null
+   private var name: String? = null
+   private var credits: String? = null
+   private var preRequests: String? = null
+   private var description: String? = null
 
     constructor(
         code: String?,
         name: String?,
         credits: String?,
-        pre_requisites: String?,
+        preRequests: String?,
         description: String?
     ) {
         this.code = code
         this.name = name
         this.credits = credits
-        this.pre_requisites = pre_requisites
+        this.preRequests = preRequests
         this.description = description
     }
 
-    constructor(code: String?, name: String?, credits: String?) {
-        this.code = code
-        this.name = name
-        this.credits = credits
-    }
+
 }

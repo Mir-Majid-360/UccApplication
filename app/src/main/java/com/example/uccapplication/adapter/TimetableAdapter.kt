@@ -1,30 +1,55 @@
 package com.example.uccapplication.adapter
 
-import androidx.recyclerview.widget.RecyclerView
-import android.view.ViewGroup
+import android.content.Context
+import android.os.Parcel
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
+import android.view.ViewGroup
+import android.widget.TextView
 import com.example.uccapplication.R
-import com.example.uccapplication.adapter.TimetableAdapter.ViewHolder
+import com.example.uccapplication.models.TimetableModel
 
-class TimetableAdapter : RecyclerView.Adapter<ViewHolder>() {
+class TimetableAdapter():RecyclerView.Adapter<TimetableAdapter.ViewHolder>() {
 
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            // item courses not created yet..
-            // replace timetable item by course item...
-            val view =
-                LayoutInflater.from(parent.context).inflate(R.layout.item_timetable, parent, false)
-            return ViewHolder(view)
-        }
+    private var timetableModelArrayList: ArrayList<TimetableModel>? = ArrayList()
+    var context: Context? = null
 
-        inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    constructor(parcel: Parcel) : this() {
+
+    }
+
+    constructor(list: ArrayList<TimetableModel>, context: Context) : this() {
+        this.timetableModelArrayList = list
+        this.context = context
+    }
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_timetable, parent, false)
+        )
+    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        var timetableModel: TimetableModel = timetableModelArrayList?.get(position)!!
+        holder.courseCode.text = timetableModelArrayList?.get(position)?.courseCode
+
     }
 
+
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return timetableModelArrayList?.size!!
     }
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        var courseCode: TextView = itemView.findViewById(R.id.tv_courseCode)
+    }
+
 }
+
+
+
