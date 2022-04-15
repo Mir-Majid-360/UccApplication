@@ -1,5 +1,6 @@
 package com.example.uccapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,6 +30,12 @@ class Courses : AppCompatActivity() {
         binding.idRVCourses.layoutManager = LinearLayoutManager(this)
         binding.idRVCourses.adapter = coursesAdapter
 
+        // toolbar back icon
+        // go back to main activity
+        binding.toolbar.ivToolbarBack.setOnClickListener{
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
 
         setCourses()
     }

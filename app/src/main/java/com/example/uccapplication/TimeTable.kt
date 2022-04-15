@@ -1,6 +1,7 @@
 package com.example.uccapplication
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,6 +30,14 @@ class TimeTable : AppCompatActivity() {
 
         binding.idRVTimetable.layoutManager = LinearLayoutManager(this)
         binding.idRVTimetable.adapter = timetableAdapter
+
+
+        // toolbar back icon
+        // go back to main activity
+        binding.toolbar.ivToolbarBack.setOnClickListener{
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
 

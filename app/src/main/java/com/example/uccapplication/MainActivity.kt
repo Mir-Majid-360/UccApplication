@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -40,9 +39,6 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
             val intent = Intent(this, FacultyDirectory::class.java)
             startActivity(intent)
         }
-
-
-
 
 
 
@@ -70,53 +66,41 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
       // bind fab email here...
 
 
-
-
     }
 
-    public fun openDrawer()
-    {
-       binding.myDrawerLayout.openDrawer(GravityCompat.START)
-    }
 
-    public  fun  closeDrawer()
-    {
-      binding.myDrawerLayout.closeDrawer(GravityCompat.START)
-    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
 
-
-
-        if(id==R.id.home)
-            closeDrawer()
-
-
-        if(id==R.id.courses){
+        if(item.itemId==R.id.menu_courses){
             val intent = Intent(this, TimeTable::class.java)
             startActivity(intent)
-            return true
         }
 
-        if(id==R.id.time_table){
+        if(item.itemId==R.id.menu_time_table){
             val intent = Intent(this, TimeTable::class.java)
             startActivity(intent)
-            return true
         }
-        if(id==R.id.admissions){
+        if(item.itemId==R.id.menu_admissions){
             val intent = Intent(this, Admissions::class.java)
             startActivity(intent)
-            return true
         }
-        if(id==R.id.faculty_directory){
+        if(item.itemId==R.id.menu_faculty_directory){
             val intent = Intent(this, FacultyDirectory::class.java)
             startActivity(intent)
-            return true
         }
 
 
        return true
+    }
+    public  fun openDrawer()
+    {
+        binding.myDrawerLayout.openDrawer(GravityCompat.START)
+    }
+
+    public  fun  closeDrawer()
+    {
+        binding.myDrawerLayout.closeDrawer(GravityCompat.START)
     }
 
 }
