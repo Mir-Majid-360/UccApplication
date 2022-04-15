@@ -54,8 +54,6 @@ class FacultyAdapter() : RecyclerView.Adapter<ViewHolder>() {
        // var photo: ImageView? =itemView.findViewById(R.id.iv_faculty_photo)
 
         var name: TextView? = itemView.findViewById(R.id.tv_faculty_name)
-      //  var phone: ImageView? = itemView.findViewById(R.id.iv_faculty_call)
-       // var email: TextView? = itemView.findViewById(R.id.iv_faculty_email)
 
 
     }

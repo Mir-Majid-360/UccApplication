@@ -7,17 +7,12 @@
     tools:context=".Admissions">
 
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
-    <TextView
+    <WebView
+        android:id="@+id/wb_webView"
         android:layout_width="match_parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_height="wrap_content"
-        android:text="Admissions"
-        android:textColor="@color/black"
-        android:textSize="45dp"
-        android:gravity="center"
-        />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

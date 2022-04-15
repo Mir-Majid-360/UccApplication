@@ -2,7 +2,7 @@ package com.example.uccapplication.models
 
 class FacultyModel {
    public var name: String? = null
-  public  var phone: String? = null
+   public  var phone: String? = null
    public var email: String? = null
 
 

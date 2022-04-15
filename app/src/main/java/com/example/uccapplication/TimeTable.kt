@@ -39,6 +39,7 @@ class TimeTable : AppCompatActivity() {
        timetableModelArrayList.add(TimetableModel("PG16","Nothing","A3","4","thu","6:00","8:00","online"))
        timetableModelArrayList.add(TimetableModel("PG14","Everything","AA","4","fri","9:00","11:00","online"))
        timetableModelArrayList.add(TimetableModel("PG12","Anything","AB","6","sat","11:00","1:00","online"))
+       timetableModelArrayList.add(TimetableModel("PG13","Anything","AB","6","sat","6:00","8:00","online"))
 
-    }
+   }
 }

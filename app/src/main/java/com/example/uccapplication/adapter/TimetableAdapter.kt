@@ -17,9 +17,6 @@ class TimetableAdapter():RecyclerView.Adapter<TimetableAdapter.ViewHolder>() {
     private var timetableModelArrayList: ArrayList<TimetableModel>? = ArrayList()
     var context: Context? = null
 
-    constructor(parcel: Parcel) : this() {
-
-    }
 
     constructor(list: ArrayList<TimetableModel>, context: Context) : this() {
         this.timetableModelArrayList = list
@@ -36,6 +33,13 @@ class TimetableAdapter():RecyclerView.Adapter<TimetableAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var timetableModel: TimetableModel = timetableModelArrayList?.get(position)!!
         holder.courseCode.text = timetableModelArrayList?.get(position)?.courseCode
+        holder.courseTitle.text = timetableModelArrayList?.get(position)?.courseTitle
+        holder.sec.text = timetableModelArrayList?.get(position)?.section
+        holder.cr.text = timetableModelArrayList?.get(position)?.credit
+        holder.room.text = timetableModelArrayList?.get(position)?.room
+        holder.days.text = timetableModelArrayList?.get(position)?.days
+        holder.start.text = timetableModelArrayList?.get(position)?.start
+        holder.ends.text = timetableModelArrayList?.get(position)?.end
 
     }
 
@@ -46,7 +50,14 @@ class TimetableAdapter():RecyclerView.Adapter<TimetableAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        var courseCode: TextView = itemView.findViewById(R.id.tv_courseCode)
+        var courseCode: TextView = itemView.findViewById(R.id.tv_tt_courseCode)
+        var courseTitle: TextView = itemView.findViewById(R.id.tv_tt_course_title)
+        var sec: TextView = itemView.findViewById(R.id.tv_tt_sec)
+        var cr: TextView = itemView.findViewById(R.id.tv_tt_credit)
+        var room: TextView = itemView.findViewById(R.id.tv_tt_room)
+        var days: TextView = itemView.findViewById(R.id.tv_tt_days)
+        var start: TextView = itemView.findViewById(R.id.tv_tt_timeStarts)
+        var ends: TextView = itemView.findViewById(R.id.tv_tt_timeEnds)
     }
 
 }

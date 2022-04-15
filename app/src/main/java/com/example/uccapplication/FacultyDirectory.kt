@@ -38,11 +38,16 @@ class FacultyDirectory : AppCompatActivity() {
 
     private fun setFaculty() {
 
-        facultyModelArrayList?.add(FacultyModel("name", "+919149636663", "mirmajid727@gmail.com"))
-        facultyModelArrayList?.add(FacultyModel("majid", "+919149636663", "mirmajid360@gmail.com"))
-        facultyModelArrayList?.add(FacultyModel("naseer", "+919149636663", "naseerrather58@gmail.com"))
-        facultyModelArrayList?.add(FacultyModel("mehraj", "+919149636663", "mehrajb33@gmail.com"))
-        facultyModelArrayList?.add(FacultyModel("anyone", "+919149636663", "anyonr123@gmail.com"))
+        facultyModelArrayList?.add(FacultyModel("Natalie Rose", "+876", "ithod@ucc.edu.jm"))
+        facultyModelArrayList?.add(FacultyModel("Otis Osbourne", "+876", "oosbourne@faculty.ucc.edu.jm"))
+        facultyModelArrayList?.add(FacultyModel("Neil Williams", "+876", "nwilliams@faculty.ucc.edu.jm"))
+        facultyModelArrayList?.add(FacultyModel("Henry Osbourne", "+876", "hosbourne@faculty.ucc.edu.jm"))
+        facultyModelArrayList?.add(FacultyModel("Cecil White", "+876", "cwhite@faculty.ucc.edu.jmm"))
+        facultyModelArrayList?.add(FacultyModel("Stephen Gentles", "+876", "sgentles@faculty.ucc.edu.jm"))
+        facultyModelArrayList?.add(FacultyModel("Rochelle McBean", "+876", "rmcbean@faculty.ucc.edu.jm"))
+        facultyModelArrayList?.add(FacultyModel("Karen Wilson", "+876", "kwilson@faculty.ucc.edu.jm"))
+        facultyModelArrayList?.add(FacultyModel("Bryanna Chang", "+876", "bchang@faculty.ucc.edu.jm"))
+        facultyModelArrayList?.add(FacultyModel("Shanae Owen", "+876", "sowens@faculty.ucc.edu.jm"))
 
 
     }
