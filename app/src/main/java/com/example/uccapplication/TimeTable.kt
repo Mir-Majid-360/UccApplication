@@ -23,10 +23,14 @@ class TimeTable : AppCompatActivity() {
         binding = ActivityTimeTableBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.toolbar.tvToolbar.text = "Time table"
+
         timetableAdapter = TimetableAdapter(timetableModelArrayList,this)
 
         binding.idRVTimetable.layoutManager = LinearLayoutManager(this)
         binding.idRVTimetable.adapter = timetableAdapter
+
+
 
         setTimetable()
     }

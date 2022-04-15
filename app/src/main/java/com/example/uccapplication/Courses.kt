@@ -20,6 +20,10 @@ class Courses : AppCompatActivity() {
         binding = ActivityCoursesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        // Activity title
+        binding.toolbar.tvToolbar.text ="Courses"
+
         coursesAdapter = CoursesAdapter(coursesModelArrayList,this)
 
         binding.idRVCourses.layoutManager = LinearLayoutManager(this)

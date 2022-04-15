@@ -24,6 +24,9 @@ class FacultyDirectory : AppCompatActivity() {
         binding = ActivityFacultyDirectoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+       // Activity Title
+        binding.toolbar.tvToolbar.text ="Faculty Directory"
+
         facultyAdapter = FacultyAdapter(facultyModelArrayList,this)
 
 
