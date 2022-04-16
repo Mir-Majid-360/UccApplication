@@ -1,11 +1,15 @@
 package com.example.uccapplication.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uccapplication.R
 import com.example.uccapplication.adapter.FacultyAdapter.ViewHolder
@@ -36,12 +40,13 @@ class FacultyAdapter() : RecyclerView.Adapter<ViewHolder>() {
        var  facultyModel:FacultyModel = facultyModelArrayList?.get(position)!!
         holder.name?.text = facultyModelArrayList?.get(position)?.name
 
-      // holder.phone?.setText(facultyModelArrayList?.get(position).toString())
-      //  holder.email?.setText(facultyModelArrayList?.get(position).toString())
+
 
 
 
     }
+
+
     override fun getItemCount(): Int {
         Log.d("size", " "+ facultyModelArrayList?.size)
         return facultyModelArrayList?.size!!
@@ -51,13 +56,14 @@ class FacultyAdapter() : RecyclerView.Adapter<ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 
-       // var photo: ImageView? =itemView.findViewById(R.id.iv_faculty_photo)
+        //var photo: ImageView? =itemView.findViewById(R.id.iv_faculty_photo)
 
         var name: TextView? = itemView.findViewById(R.id.tv_faculty_name)
+        var phone: ImageView? = itemView.findViewById(R.id.iv_faculty_call)
+        var email: ImageView = itemView.findViewById(R.id.iv_faculty_email)
 
 
     }
-
 
 
 }

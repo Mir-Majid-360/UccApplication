@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/drawable/circle.xml" value="0.133" />
         <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/drawable/ic_arrow_back.xml" value="0.132" />
+        <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/drawable/ic_call.xml" value="0.132" />
+        <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/drawable/ic_email.xml" value="0.132" />
         <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/drawable/ic_home.xml" value="0.132" />
         <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/drawable/ic_menu.xml" value="0.133" />
         <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/drawable/layout_view_bg.xml" value="0.133" />
@@ -18,7 +20,7 @@
         <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/layout/content_main.xml" value="0.1" />
         <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/layout/faculty_info.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/layout/item_course.xml" value="0.25" />
-        <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/layout/item_faculty_info.xml" value="0.1" />
+        <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/layout/item_faculty_info.xml" value="0.2" />
         <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/layout/item_timetable.xml" value="0.1" />
         <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/layout/menu_header.xml" value="0.1" />
         <entry key="..\:/Users/dell.pc/AndroidStudioProjects/UccApplication/app/src/main/res/layout/toolbar.xml" value="0.18" />

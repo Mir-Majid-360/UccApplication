@@ -64,6 +64,15 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
         }
 
       // bind fab email here...
+        binding.fabEmail.setOnClickListener{
+
+            val to = "Rose-ithod@ucc.edu.jm"
+            val intent = Intent(Intent.ACTION_SEND)
+            val addressees = arrayOf(to)
+            intent.putExtra(Intent.EXTRA_EMAIL, addressees)
+            intent.type = "message/rfc822"
+            startActivity(Intent.createChooser(intent, "Send Email using:"));
+        }
 
 
     }
