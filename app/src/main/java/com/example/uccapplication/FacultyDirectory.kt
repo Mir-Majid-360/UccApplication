@@ -1,8 +1,13 @@
 package com.example.uccapplication
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uccapplication.adapter.FacultyAdapter
@@ -60,6 +65,31 @@ class FacultyDirectory : AppCompatActivity() {
         facultyModelArrayList?.add(FacultyModel("Bryanna Chang", "+876", "bchang@faculty.ucc.edu.jm"))
         facultyModelArrayList?.add(FacultyModel("Shanae Owen", "+876", "sowens@faculty.ucc.edu.jm"))
 
+
+    }
+
+    fun phoneClicked(phone:String)
+    {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CALL_PHONE),12);
+
+        }else {
+            val intent = Intent(Intent.ACTION_CALL);
+            intent.data = Uri.parse("tel:$phone")
+            startActivity(intent)
+        }
+
+    }
+
+
+    fun emailClicked(email:String)
+    {
+        val to = email
+        val intent = Intent(Intent.ACTION_SEND)
+        val addressees = arrayOf(to)
+        intent.putExtra(Intent.EXTRA_EMAIL, addressees)
+        intent.type = "message/rfc822"
+        startActivity(Intent.createChooser(intent, "Send Email using:"));
 
     }
 }

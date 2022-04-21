@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.uccapplication.FacultyDirectory
 import com.example.uccapplication.R
 import com.example.uccapplication.adapter.FacultyAdapter.ViewHolder
 import com.example.uccapplication.models.FacultyModel
@@ -19,11 +20,11 @@ class FacultyAdapter() : RecyclerView.Adapter<ViewHolder>() {
 
 
     private var facultyModelArrayList: ArrayList<FacultyModel>? = ArrayList()
-    var context: Context? = null
+    var facultyDirectory: FacultyDirectory? = null
 
-    constructor(list: ArrayList<FacultyModel>,context: Context) : this() {
+    constructor(list: ArrayList<FacultyModel>,context: FacultyDirectory) : this() {
         this.facultyModelArrayList = list
-        this.context = context
+        this.facultyDirectory = context
 
     }
 
@@ -40,6 +41,12 @@ class FacultyAdapter() : RecyclerView.Adapter<ViewHolder>() {
        var  facultyModel:FacultyModel = facultyModelArrayList?.get(position)!!
         holder.name?.text = facultyModelArrayList?.get(position)?.name
 
+        holder.email.setOnClickListener {
+            facultyModel.email?.let { it1 -> facultyDirectory?.emailClicked(it1) }
+        }
+        holder.phone?.setOnClickListener {
+            facultyModel?.phone?.let { it1 -> this.facultyDirectory?.phoneClicked(it1) }
+        }
 
 
 
